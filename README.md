@@ -5,4 +5,4 @@ This region aims to provide a fast, simple implementation of the SKATER spatial 
 
 The module depends on scikit-learn, scipy, numpy, and pysal.
 
-This will get merged into pysal/region by Dec 1, 2017.
+**This has been merged into [PySAL's region package](https://github.com/pysal/region), but this will remain a single-class wrapper around the `Spanning_Forest` clusterer.**
