@@ -4,6 +4,7 @@
 import codecs
 import os
 import sys
+from region.skater.__version__ import __version__
 
 from setuptools import find_packages, setup
 
@@ -14,24 +15,8 @@ URL = 'https://github.com/ljwolf/regionskate'
 EMAIL = 'levi.john.wolf@gmail.com'
 AUTHOR = 'Levi John Wolf'
 
-here = os.path.abspath(os.path.dirname(__file__))
-
-# Import the README and use it as the long-description.
-with codecs.open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
-    long_description = '\n' + f.read()
-
-# Load the package's __version__.py module as a dictionary. 
-about = {}
-with open(os.path.join(here, NAME, "__version__.py")) as f:
-    exec(f.read(), about)
-
-# Support "$ setup.py publish".
-if sys.argv[-1] == "publish":
-    os.system("python setup.py sdist bdist_wheel upload")
-    sys.exit()
-
 # What packages are required for this module to be executed?
-required = ['numpy','scipy','scikit-learn','pysal'
+required = ['numpy','scipy','scikit-learn','region'
     # 'requests', 'maya', 'records',
 ]
 
@@ -42,17 +27,12 @@ required = ['numpy','scipy','scikit-learn','pysal'
 # Where the magic happens:
 setup(
     name=NAME,
-    version=about['__version__'],
+    version=__version__
     description=DESCRIPTION,
-    long_description=long_description,
     author=AUTHOR,
     author_email=EMAIL,
     url=URL,
-    packages=find_packages(exclude=('tests',)),
-#     entry_points={
-#         'console_scripts': ['mycli=mymodule:cli'],
-#     },
-    install_requires=required,
+    install_requires=['regionskate'],
     include_package_data=True,
     license='ISC',
     classifiers=[
