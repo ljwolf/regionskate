@@ -1,2 +1,2 @@
-from region.skater.skater import Spanning_Tree
+from region.skater.skater import Spanning_Forest
 from region import skater 

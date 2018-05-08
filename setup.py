@@ -1,11 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import codecs
-import os
-import sys
-from region.skater.__version__ import __version__
-
 from setuptools import find_packages, setup
 
 # Package meta-data.
@@ -27,12 +22,12 @@ required = ['numpy','scipy','scikit-learn','region'
 # Where the magic happens:
 setup(
     name=NAME,
-    version=__version__
+    version="1.0.1",
     description=DESCRIPTION,
     author=AUTHOR,
     author_email=EMAIL,
     url=URL,
-    install_requires=['regionskate'],
+    install_requires=['region'],
     include_package_data=True,
     license='ISC',
     classifiers=[
